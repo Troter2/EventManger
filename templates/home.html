@@ -2,7 +2,15 @@
 {% block title %} Event Manager {% endblock %}
 
 {% block content %}
-    
+    <figure class="mainimg">
+        <div class="main-figure">
+            <div class="full-image">
+                <img class="img-fluid" src="https://www.latercera.com/resizer/0m3JT6JAmot5lzEHQ9eF7dXQO5c=/900x600/filters:focal(469x292:479x282)/cloudfront-us-east-1.images.arcpublishing.com/copesa/6O3E6FX56FCYFGW5NZFOKYGNY4.jpg" />
+            </div>
+        </div>
+        <figcaption></figcaption>
+    </figure>
+
 {% if user.is_authenticated %}
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
@@ -11,5 +19,5 @@
 {% else %}
     <a href="{% url 'login' %}">Log In</a>
 {% endif %}
-    
+
 {% endblock %}
