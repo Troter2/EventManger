@@ -20,7 +20,7 @@
     <div class="container-fluid">
         <!-- icono o nombre -->
         <div class="tt-col">
-            <a href="#" class="tt-logo tt-logo-alignment"> 
+            <a href="{% url 'home' %}" class="tt-logo tt-logo-alignment">
                 <img class="img-fluid" src="{% static 'img/Logo.png' %}"/>
             </a>
         </div>
@@ -38,13 +38,22 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav me-auto">
                 <li>
-                    <button class="nav-button menu-button" href="#">Eventos</button>
+                    <form action="{% url 'eventspage' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-button menu-button">Eventos</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="nav-button menu-button" href="#">DJ</button>
+                    <form action="{% url 'djpage' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-button menu-button">DJ</button>
+                    </form>
                 </li>
                 <li>
-                    <button class="nav-button menu-button" href="#">Local</button>
+                    <form action="{% url 'localpage' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-button menu-button">Local</button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -58,7 +67,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
-
 </body>
 </html>

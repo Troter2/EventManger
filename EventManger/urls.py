@@ -20,10 +20,16 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
 from EventManger.views import homepage
+from Dj.views import djpage
+from Club.views import clubpage
+from Event.views import events
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', homepage),
+    path('', homepage, name='home'),
+    path('dj/', djpage, name='djpage'),
+    path('local/', clubpage, name='localpage'),
+    path('eventos/', events, name='eventspage'),
 
 ]
