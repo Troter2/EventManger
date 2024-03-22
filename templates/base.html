@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <!-- <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body class="">
@@ -20,8 +21,8 @@
     <div class="container-fluid">
         <!-- icono o nombre -->
         <div class="tt-col">
-            <a href="{% url 'home' %}" class="tt-logo tt-logo-alignment">
-                <img class="img-fluid" src="{% static 'img/Logo.png' %}"/>
+            <a href="#" class="tt-logo tt-logo-alignment"> 
+                <img class="menu-logo" style="max-height: 80px"  src="{% static 'img/Logo.png' %}"/>
             </a>
         </div>
 
