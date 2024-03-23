@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <!-- <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %} {% endblock %}</title>
 </head>
-<body class="">
+<body style="background-color: #eee;    ">
 
 <!-- Inicio del menu -->
 
@@ -21,8 +21,8 @@
     <div class="container-fluid">
         <!-- icono o nombre -->
         <div class="tt-col">
-            <a href="#" class="tt-logo tt-logo-alignment"> 
-                <img class="menu-logo" style="max-height: 80px"  src="{% static 'img/Logo.png' %}"/>
+            <a href="{% url 'home' %}" class="tt-logo tt-logo-alignment">
+                <img class="menu-logo" style="max-height: 80px" src="{% static 'img/Logo.png' %}"/>
             </a>
         </div>
 
@@ -60,7 +60,7 @@
         </div>
     </div>
 </nav>
-<main class="overflow-auto">
+<main class="overflow-auto" style="background-color: #eee;">
     {% block content %} {% endblock %}
 </main>
 

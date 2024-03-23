@@ -8,3 +8,4 @@ class Dj(models.Model):
     style = models.CharField(max_length=100)
     best_known = models.CharField(max_length=100)
     description = models.TextField()
+    photo = models.ImageField(upload_to='dj/')
