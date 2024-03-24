@@ -1,4 +1,92 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+
+    <section class="h-100 gradient-form">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 ">
+                                    <p class="h1">AÑADIR CLUB</p>
+
+                                    <form method="post" enctype="multipart/form-data" action="{% url 'club-create' %}">
+                                        {% csrf_token %}
+
+                                        <div class="form-outline mb-4">
+                                            <div class="form__group field">
+                                                <input type="text" class="form__field" id="name" name="name"
+                                                       placeholder="Nombre"
+                                                       required="">
+                                                <label for="name" class="form__label">Nombre</label>
+                                            </div>
+                                            <div class="form__group field">
+                                                <input type="text" class="form__field" placeholder="Ubicacion"
+                                                       name="ubication" id="ubication" required="">
+                                                <label for="ubication" class="form__label">Ubicacion</label>
+                                            </div>
+                                            <div class="form__group field">
+                                                <input type="date" class="form__field" placeholder="Fecha de apertura"
+                                                       name="creation_date" id="creation_date" required="">
+                                                <label for="creation_date" class="form__label">Fecha de apertura</label>
+                                            </div>
+                                            <div class="form-floating mt-3">
+                                                <textarea class="form-control" placeholder="Descripcion"
+                                                          id="description" name="description"
+                                                          style="height: 100px"></textarea>
+                                                <label for="description">Descripcion</label>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="id_photo" class="mt-3">
+                                                    <p class="login_button" id="photo_label">
+                                                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                                                        SUBIR FOTO
+                                                    </p>
+                                                </label>
+                                                <input type="file" name="photo" accept="image/*" required=""
+                                                       class="invisible" id="id_photo">
+                                            </div>
+                                            <div class="row mb-2">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button class="login_button" type="submit">
+                                                Añadir
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center login_gradient">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">¡La fiesta está por alcanzar su máximo esplendor!</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const inputFile = document.getElementById('id_photo');
+        const fileNameDisplay = document.getElementById('photo_label');
+
+        inputFile.addEventListener('change', function () {
+            if (inputFile.files.length > 0) {
+                fileNameDisplay.textContent = inputFile.files[0].name;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+    </script>
+
+
+
 {% endblock %}
