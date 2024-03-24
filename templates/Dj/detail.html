@@ -4,8 +4,8 @@
     <div class="container-fluid bg-dark">
         <div class="row">
             <div class="col-md-12 p-0">
-                <div class="position-relative">
-                    <img src="{{ dj.photo.url }}" class="img-fluid w-100" alt="{{ dj.name }}">
+                <div class="position-relative" style="overflow: hidden; height: 600px;">
+                    <img src="{{ dj.photo.url }}" class="img-fluid w-100 h-100 rounded" style="object-fit: cover;" alt="{{ dj.name }}">
                     <div class="position-absolute bottom-0 start-0 p-3">
                         <h1 class="text-white">{{ dj.name }}</h1>
                     </div>
