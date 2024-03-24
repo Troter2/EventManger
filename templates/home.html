@@ -1,23 +1,165 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} Event Manager {% endblock %}
 
 {% block content %}
-    <figure class="mainimg">
-        <div class="main-figure">
-            <div class="full-image">
-                <img class="img-fluid" src="https://www.latercera.com/resizer/0m3JT6JAmot5lzEHQ9eF7dXQO5c=/900x600/filters:focal(469x292:479x282)/cloudfront-us-east-1.images.arcpublishing.com/copesa/6O3E6FX56FCYFGW5NZFOKYGNY4.jpg" />
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/banner2.png' %}" class="d-block w-100" alt="...">
             </div>
         </div>
-        <figcaption></figcaption>
-    </figure>
+    </div>
 
-{% if user.is_authenticated %}
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Log Out</button>
-    </form>
-{% else %}
-    <a href="{% url 'login' %}">Log In</a>
-{% endif %}
+    <section class="h-100 gradient-form bg-black">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="rounded-3 text-white row d-flex">
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <h1>
+                                    Donde los sueños se mezclan con la música y la diversión.
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <p style="text-align: right">
+                                    ¡Bienvenido a nuestra plataforma de eventos de discotecas, donde la diversión
+                                    nunca termina y la música nunca deja de sonar! Somos tu destino definitivo para
+                                    descubrir los mejores eventos, DJs y clubes de la escena nocturna. En nuestra
+                                    página, te sumergirás en un mundo de ritmos vibrantes, experiencias emocionantes
+                                    y momentos inolvidables.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/defqon12.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+    <section class="h-100 gradient-form bg-black">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="rounded-3 text-white row d-flex">
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <p>
+                                    Nuestra plataforma te ofrece una guía detallada de los clubes más destacados,
+                                    con información sobre su ambiente, música, ubicación y más. Ya sea que
+                                    prefieras el glamur de las discotecas exclusivas o la autenticidad de los
+                                    locales underground, aquí encontrarás opciones para todos los gustos y estilos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4 justify-content-end">
+                                <p class="h1" style="text-align: right">
+                                    ¿Buscas los mejores clubes de la ciudad? No busques más.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/medusa-esc.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <section class="h-100 gradient-form bg-black">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="rounded-3 text-white row d-flex">
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <h1>
+                                    Y eso no es todo.
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4 justify-content-end">
+                                <p style="text-align: right">
+                                    También te mantenemos al tanto de los talentos más destacados de la escena
+                                    de DJs, con perfiles completos de los artistas, sus próximas presentaciones
+                                    y mixes exclusivos para que puedas disfrutar de su música dondequiera que
+                                    estés.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/mh-esc.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <section class="h-100 gradient-form bg-black">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="rounded-3 text-white row d-flex">
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4">
+                                <p>
+                                    Únete a nosotros y prepárate para sumergirte en la vibrante cultura nocturna,
+                                    descubrir nuevos sonidos y crear recuerdos que durarán toda la vida. La fiesta
+                                    te espera, y nosotros te llevaremos allí.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card-body p-md-5 mx-md-4 justify-content-end">
+                                <p class="h1" style="text-align: right">
+                                    Entonces, ¿qué estás esperando?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
 
 {% endblock %}
