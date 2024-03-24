@@ -1,5 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <p>{{ event }}</p>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-md-12 p-0">
+                <div class="position-relative" style="overflow: hidden; height: 600px;">
+                    <img src="{{ event.photo.url }}" class="img-fluid w-100 h-100 rounded" style="object-fit: cover;"
+                         alt="{{ event.title }}">
+                    <div class="position-absolute bottom-0 start-0 p-3">
+                        <h1 class="text-white"
+                            style="font-family: sans-serif; font-size: 3em; font-weight: 900;text-shadow: 2px 2px 0px orange;">{{ event.title.upper }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <div class="text-white">
+                    <div class="card-body row d-flex">
+                        <div class="col-6">
+                            <p><strong>Fecha:</strong> {{ event.date }}</p>
+                            <p><strong>Club:</strong> {{ event.club.name }}</p>
+                            <p><strong>Precio:</strong> {{ event.price }}€</p>
+
+                        </div>
+
+                        <div class="col-6 row d-flex">
+                            <p><strong>Djs:<br/></strong>
+                                {% for dj_item in event.dj.all %}
+                                    <div class="col-6">
+                                        {{ dj_item.name }}</div>
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <p><strong>Descripción:</strong></p>
+                        <p class="card-text text-justify">{{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

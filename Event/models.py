@@ -12,4 +12,4 @@ class Event(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     photo = models.ImageField(upload_to='event/')
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
-    dj = models.ManyToManyField(Dj)
+    dj = models.ManyToManyField(Dj, related_name='event')
