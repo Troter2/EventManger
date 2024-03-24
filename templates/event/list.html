@@ -4,7 +4,7 @@
     <section class="h-100 gradient-form">
         <div class="container py-5 h-100">
             {% if user.is_authenticated %}
-                <a href="{% url 'club-create' %}">
+                <a href="{% url 'event-create' %}">
                     <button class="add-button float-end"><i class="bi bi-plus"></i> Add</button>
                 </a>
             {% endif %}
@@ -13,16 +13,17 @@
                     <div class="rounded-3 text-black row d-flex">
                         {% for event in events %}
                             <div class="col-12 col-lg-6">
-                                <a href="{% url 'club-detail' event.id %}">
+                                <a href="{% url 'event-detail' event.id %}">
                                     <div class="flip-card">
                                         <div class="flip-card-inner">
                                             <div class="flip-card-front">
                                                 <img class=" img-fluid flip-card-img"
-                                                     src="{{ club.photo.url }}"/>
+                                                     src="{{ event.photo.url }}"/>
                                             </div>
                                             <div class="flip-card-back">
-                                                <p class="title">{{ club.name.upper }}</p>
-                                                <p>Ubicacion: {{ club.ubication }}</p>
+                                                <p class="title">{{ event.title.upper }}</p>
+                                                <p>Fecha: {{ event.date }}</p>
+                                                <p>Precio: {{ event.price }}</p>
                                             </div>
                                         </div>
                                     </div>
