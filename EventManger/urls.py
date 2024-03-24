@@ -22,21 +22,23 @@ from django.conf.urls.static import static
 from EventManger.views import homepage
 from Dj.views import dj_list, dj_detail, dj_create
 from Club.views import club_detail, club_list, club_create
-from Event.views import events
+from Event.views import event_create, event_detail, event_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', homepage, name='home'),
-    path('eventos/', events, name='eventspage'),
     path('djs/', dj_list, name='dj-list'),
     path('dj/<int:id>/', dj_detail, name='dj-detail'),
     path('dj/create', dj_create, name='dj-create'),
     path('clubs/', club_list, name='club-list'),
     path('club/<int:id>', club_detail, name='club-detail'),
-    path('club/create', club_create, name='club-create')
+    path('club/create', club_create, name='club-create'),
+    path('events/', event_list, name='event-list'),
+    path('event/<int:id>', event_detail, name='event-detail'),
+    path('event/create', event_create, name='event-create')
 
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #new
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
