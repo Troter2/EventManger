@@ -21,18 +21,20 @@ from django.conf.urls.static import static
 
 from EventManger.views import homepage
 from Dj.views import dj_list, dj_detail, dj_create
-from Club.views import clubpage
+from Club.views import club_detail, club_list, club_create
 from Event.views import events
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', homepage, name='home'),
-    path('local/', clubpage, name='localpage'),
     path('eventos/', events, name='eventspage'),
     path('djs/', dj_list, name='dj-list'),
     path('dj/<int:id>/', dj_detail, name='dj-detail'),
     path('dj/create', dj_create, name='dj-create'),
+    path('clubs/', club_list, name='club-list'),
+    path('club/<int:id>', club_detail, name='club-detail'),
+    path('club/create', club_create, name='club-create')
 
 ]
 

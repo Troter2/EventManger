@@ -7,3 +7,4 @@ class Club(models.Model):
     description = models.TextField()
     ubication = models.CharField(max_length=200)
     creation_date = models.DateTimeField()
+    photo = models.ImageField(upload_to='club/')
