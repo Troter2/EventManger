@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
+{% block content %} 
     <div class="container-fluid bg-dark">
         <div class="row">
             <div class="col-md-12 p-0">
                 <div class="position-relative" style="overflow: hidden; height: 600px;">
                     <img src="{{ dj.photo.url }}" class="img-fluid w-100 h-100 rounded" style="object-fit: cover;" alt="{{ dj.name }}">
                     <div class="position-absolute bottom-0 start-0 p-3">
-                        <h1 class="text-white" style="font-family: sans-serif; font-size: 1.5em; font-weight: 900;">{{ dj.name.upper }}</h1>
+                        <h1 class="text-white" style="font-family: sans-serif; font-size: 3em; font-weight: 900;text-shadow: 2px 2px 0px orange;">{{ dj.name.upper }}</h1>
                     </div>
                 </div>
             </div>
