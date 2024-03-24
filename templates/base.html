@@ -39,22 +39,19 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav me-auto">
                 <li>
-                    <form action="{% url 'eventspage' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="nav-button menu-button">Eventos</button>
-                    </form>
+                    <a href="{% url 'eventspage' %}" >
+                        <button class="nav-button menu-button">Eventos</button>
+                    </a>
                 </li>
                 <li>
-                    <form action="{% url 'djpage' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="nav-button menu-button">DJ</button>
-                    </form>
+                    <a href="{% url 'dj-list' %}" >
+                        <button class="nav-button menu-button">DJ</button>
+                    </a>
                 </li>
                 <li>
-                    <form action="{% url 'localpage' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="nav-button menu-button">Local</button>
-                    </form>
+                    <a href="{% url 'localpage' %}" >
+                        <button class="nav-button menu-button">Local</button>
+                    </a>
                 </li>
             </ul>
         </div>

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <section class="h-100 gradient-form">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="rounded-3 text-black row d-flex">
+                        {% for dj in djs %}
+                            <div class="col-6">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <img class=" img-fluid"
+                                                 src="{{ dj.photo.url }}"/>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <p class="title">{{ dj.name.upper }}</p>
+                                            <p>Estilo: {{ dj.style }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
