@@ -1,148 +1,189 @@
 html body {
     min-height: 100vh !important;
 }
+
 .login_gradient {
-/* fallback for old browsers */
-background: #fccb90;
+    /* fallback for old browsers */
+    background: #fccb90;
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 }
 
 
 .login_button {
-  width: fit-content;
-  display: flex;
-  padding: 1.2em 1.6rem;
-  cursor: pointer;
-  gap: 0.4rem;
-  font-weight: bold;
-  border-radius: 30px;
-  text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
-  background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
-  background-size: 300%;
-  color: #fff;
-  border: none;
-  background-position: left center;
-  box-shadow: 0 30px 10px -20px rgba(0,0,0,.2);
-  transition: background .3s ease;
+    width: fit-content;
+    display: flex;
+    padding: 1.2em 1.6rem;
+    cursor: pointer;
+    gap: 0.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+    background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+    background-size: 300%;
+    color: #fff;
+    border: none;
+    background-position: left center;
+    box-shadow: 0 30px 10px -20px rgba(0, 0, 0, .2);
+    transition: background .3s ease;
 }
 
 .login_button:hover {
-  background-size: 320%;
-  background-position: right center;
+    background-size: 320%;
+    background-position: right center;
 }
 
 .login_button:hover svg {
-  fill: #fff;
+    fill: #fff;
 }
 
 .login_button svg {
-  width: 23px;
-  fill: #f09f33;
-  transition: .3s ease;
+    width: 23px;
+    fill: #f09f33;
+    transition: .3s ease;
 }
 
 
 .login-form-control {
-  position: relative;
-  margin: 20px 0 25px;
-  width: 190px;
+    position: relative;
+    margin: 20px 0 25px;
+    width: 190px;
 }
 
 .login-form-control input {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px #495057 solid;
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-  font-size: 18px;
-  color: #495057;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #495057 solid;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #495057;
 }
 
 .login-form-control input:focus,
 .login-form-control input:valid {
-  outline: 0;
-  border-bottom-color: #F028BC;
+    outline: 0;
+    border-bottom-color: #F028BC;
 }
 
 .login-form-control label {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  pointer-events: none;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
 }
 
 .login-form-control label span {
-  display: inline-block;
-  font-size: 18px;
-  min-width: 5px;
-  color: #495057;
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    color: #495057;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.login-form-control input:focus+label span,
-.login-form-control input:valid+label span {
-  color: #F028BC;
-  transform: translateY(-30px);
+.login-form-control input:focus + label span,
+.login-form-control input:valid + label span {
+    color: #F028BC;
+    transform: translateY(-30px);
 }
-
 
 
 .flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 254px;
-  margin-bottom: 1.5em;
-  perspective: 1000px;
-  font-family: sans-serif;
+    background-color: transparent;
+    width: 100%;
+    height: 254px;
+    margin-bottom: 1.5em;
+    perspective: 1000px;
+    font-family: sans-serif;
 }
 
 .title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-  position: absolute;
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid coral;
-  border-radius: 1rem;
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid coral;
+    border-radius: 1rem;
+}
+
+.flip-card-img {
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .flip-card-front {
-  color: coral;
+    color: coral;
 }
 
 .flip-card-back {
-  background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
-  color: #fff;
-  transform: rotateY(180deg);
+    background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+
+.add-button {
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(30deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33);
+    border-radius: 20px;
+    background-size: 100% auto;
+    font-family: inherit;
+    font-size: 17px;
+    padding: 0.6em 1em;
+}
+
+.add-button:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #CC3F47FF;
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
 }

@@ -20,7 +20,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 from EventManger.views import homepage
-from Dj.views import dj_list, dj_detail
+from Dj.views import dj_list, dj_detail, dj_create
 from Club.views import clubpage
 from Event.views import events
 
@@ -31,7 +31,8 @@ urlpatterns = [
     path('local/', clubpage, name='localpage'),
     path('eventos/', events, name='eventspage'),
     path('djs/', dj_list, name='dj-list'),
-    path('dj/<int:id>/', dj_detail),
+    path('dj/<int:id>/', dj_detail, name='dj-detail'),
+    path('dj/create', dj_create, name='dj-create'),
 
 ]
 
