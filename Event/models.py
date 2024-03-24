@@ -10,5 +10,6 @@ class Event(models.Model):
     description = models.TextField()
     date = models.DateField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    photo = models.ImageField(upload_to='event/')
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
     dj = models.ManyToManyField(Dj)

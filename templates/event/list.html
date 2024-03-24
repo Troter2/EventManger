@@ -1,4 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+    <section class="h-100 gradient-form">
+        <div class="container py-5 h-100">
+            {% if user.is_authenticated %}
+                <a href="{% url 'club-create' %}">
+                    <button class="add-button float-end"><i class="bi bi-plus"></i> Add</button>
+                </a>
+            {% endif %}
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10 col-11">
+                    <div class="rounded-3 text-black row d-flex">
+                        {% for event in events %}
+                            <div class="col-12 col-lg-6">
+                                <a href="{% url 'club-detail' event.id %}">
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <img class=" img-fluid flip-card-img"
+                                                     src="{{ club.photo.url }}"/>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <p class="title">{{ club.name.upper }}</p>
+                                                <p>Ubicacion: {{ club.ubication }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
