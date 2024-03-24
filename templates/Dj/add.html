@@ -1,4 +1,99 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+
+    <section class="h-100 gradient-form">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 ">
+                                    <p class="h1">AÑADIR DJ</p>
+                                    <p>Campos obligatorios: {{ required_fields }}</p>
+
+                                    <form method="post" enctype="multipart/form-data" action="{% url 'dj-create' %}">
+                                        {% csrf_token %}
+
+                                        <div class="form-outline mb-4">
+                                            <div class="form__group field">
+                                                <input type="text" class="form__field" id="name" name="name"
+                                                       placeholder="Nombre"
+                                                       required="">
+                                                <label for="name" class="form__label">Nombre</label>
+                                            </div>
+                                            <div class="form__group field">
+                                                <input type="text" class="form__field" placeholder="Nacionalidad"
+                                                       name="nationality" id="nationality" required="">
+                                                <label for="nationality" class="form__label">Nacionalidad</label>
+                                            </div>
+                                            <div class="form__group field">
+                                                <input type="text" class="form__field" placeholder="Estilo"
+                                                       name="style" id="style" required="">
+                                                <label for="style" class="form__label">Estilo</label>
+                                            </div>
+                                            <div class="form__group field">
+                                                <input type="text" class="form__field" placeholder="Mas conocido por:"
+                                                       name="best_known" id="best_known" required="">
+                                                <label for="best_known" class="form__label">Mas conocido por:</label>
+                                            </div>
+                                            <div class="form-floating mt-3">
+                                                <textarea class="form-control" placeholder="Descripcion" id="description" name="description" style="height: 100px"></textarea>
+                                                <label for="description">Descripcion</label>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="id_photo" class="mt-3">
+                                                    <p class="login_button" id="photo_label">
+                                                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                                                        SUBIR FOTO
+                                                    </p>
+                                                </label>
+                                                <input type="file" name="photo" accept="image/*" required="" class="invisible" id="id_photo">
+                                            </div>
+                                            <div class="row mb-2">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button class="login_button" type="submit">
+                                                Añadir
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center login_gradient">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">Esto no va solo de fiestas</h4>
+                                    <p class="small mb-0">Esto va del palpitar en el pecho al ritmo de los altavoces, el
+                                        latir de la música entrelazado con las risas de los amigos
+                                        Se trata de imágenes que perdurarán en nuestra memoria. Se trata de construir
+                                        lazos de amistad que perduran en el espacio y tiempo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const inputFile = document.getElementById('id_photo');
+        const fileNameDisplay = document.getElementById('photo_label');
+
+        inputFile.addEventListener('change', function() {
+            if (inputFile.files.length > 0) {
+                fileNameDisplay.textContent = inputFile.files[0].name;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+    </script>
+
+
+
 {% endblock %}

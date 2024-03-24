@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from Dj.forms import DjForm
 from Dj.models import Dj
 
 
@@ -19,4 +20,11 @@ def dj_detail(request, id):
 
 @login_required
 def dj_create(request):
-    return render(request, 'dj/add.html')
+    if request.method == 'POST':
+        form = DjForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('dj-list')
+    else:
+        form = DjForm()
+    return render(request, 'dj/add.html', {'form': form})
