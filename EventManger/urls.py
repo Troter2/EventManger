@@ -31,7 +31,7 @@ urlpatterns = [
     path('local/', clubpage, name='localpage'),
     path('eventos/', events, name='eventspage'),
     path('djs/', dj_list, name='dj-list'),
-    path('bands/<int:id>/', dj_detail),
+    path('dj/<int:id>/', dj_detail),
 
 ]
 
