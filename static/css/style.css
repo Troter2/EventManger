@@ -247,11 +247,27 @@ html body {
     font-weight: 700;
 }
 
-.form-container{
+.form-container {
 
 }
 
+.link {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.link:hover {
+    color: #f09f33;
+}
+
+.login-link {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 
 
 

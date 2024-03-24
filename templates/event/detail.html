@@ -20,7 +20,11 @@
                     <div class="card-body row d-flex">
                         <div class="col-6">
                             <p><strong>Fecha:</strong> {{ event.date }}</p>
-                            <p><strong>Club:</strong> {{ event.club.name }}</p>
+                            <p><strong>Club:</strong>
+                                <a href="{% url 'club-detail' event.club.id %}" class="link">
+                                    {{ event.club.name }}
+                                </a>
+                            </p>
                             <p><strong>Precio:</strong> {{ event.price }}€</p>
 
                         </div>
@@ -29,7 +33,10 @@
                             <p><strong>Djs:<br/></strong>
                                 {% for dj_item in event.dj.all %}
                                     <div class="col-6">
-                                        {{ dj_item.name }}</div>
+                                        <a href="{% url 'dj-detail' dj_item.id %}" class="link">
+                                            {{ dj_item.name }}
+                                        </a>
+                                    </div>
                                 {% endfor %}
                             </p>
                         </div>

@@ -8,3 +8,6 @@ class Club(models.Model):
     ubication = models.CharField(max_length=200)
     creation_date = models.DateTimeField()
     photo = models.ImageField(upload_to='club/')
+
+    def __str__(self):
+        return self.name

@@ -156,16 +156,24 @@
         <section class="">
             <footer class="text-center text-white" style="background-color: black;">
                 <div class="container p-4 pb-0">
-                    <section class="">
+                    <section class="row d-flex pb-3">
+                        <div class="col-6 align-content-start">
                         {% if user.is_authenticated %}
                             <form action="{% url 'logout' %}" method="post">
                                 {% csrf_token %}
-                                <button type="submit" style="background-color: transparent; border: none; color: white; text-decoration: underline; cursor: pointer;">Log Out
+                                <button type="submit" class="link login-link" >Log Out
                                 </button>
                             </form>
                         {% else %}
-                            <a href="{% url 'login' %}" style="color: white;">Log In</a>
+                            <a href="{% url 'login' %}" class="link login-link" >Log In</a>
                         {% endif %}
+                        </div>
+                        <div class="col-6 align-content-start ">
+
+                            <a class="link" href="https://www.instagram.com/epsudl/"><i class="bi bi-instagram me-3"></i></a>
+                            <a class="link" href="https://ca-es.facebook.com/universitatdelleida"><i class="bi bi-facebook me-3"></i></a>
+                            <a class="link" href="https://github.com/Troter2/EventManger"><i class="bi bi-github"></i></a>
+                        </div>
                     </section>
                 </div>
             </footer>

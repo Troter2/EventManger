@@ -9,3 +9,6 @@ class Dj(models.Model):
     description = models.TextField()
     photo = models.ImageField(upload_to='dj/')
     audio = models.FileField(upload_to='dj_audio/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
