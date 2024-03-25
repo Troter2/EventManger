@@ -23,7 +23,6 @@ def event_create(request):
 
     clubs = Club.objects.all().order_by('name')
     if request.method == 'POST':
-        print(request.POST)
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()

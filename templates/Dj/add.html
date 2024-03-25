@@ -40,7 +40,9 @@
                                                 <label for="best_known" class="form__label">Mas conocido por:</label>
                                             </div>
                                             <div class="form-floating mt-3">
-                                                <textarea class="form-control" placeholder="Descripcion" id="description" name="description" style="height: 100px"></textarea>
+                                                <textarea class="form-control" placeholder="Descripcion"
+                                                          id="description" name="description"
+                                                          style="height: 100px"></textarea>
                                                 <label for="description">Descripcion</label>
                                             </div>
                                             <div class="mb-2">
@@ -50,9 +52,19 @@
                                                         SUBIR FOTO
                                                     </p>
                                                 </label>
-                                                <input type="file" name="photo" accept="image/*" required="" class="invisible" id="id_photo">
                                             </div>
-                                            <div class="row mb-2">
+                                            <div class="">
+                                                <label for="id_audio" class="mt-1">
+                                                    <p class="login_button" id="audio_label">
+                                                        <i class="bi bi-cloud-arrow-up-fill"></i>
+                                                        SUBIR AUDIO
+                                                    </p>
+                                                </label>
+                                                <input type="file" name="audio" accept="audio/*" required=""
+                                                       class="invisible" id="id_audio">
+
+                                                <input type="file" name="photo" accept="image/*" required=""
+                                                       class="invisible" id="id_photo">
                                             </div>
 
                                         </div>
@@ -78,10 +90,21 @@
         </div>
     </section>
     <script>
-        const inputFile = document.getElementById('id_photo');
-        const fileNameDisplay = document.getElementById('photo_label');
+        const photoFile = document.getElementById('id_photo');
+        const photoNameDisplay = document.getElementById('photo_label');
 
-        inputFile.addEventListener('change', function() {
+        photoFile.addEventListener('change', function () {
+            if (photoFile.files.length > 0) {
+                photoNameDisplay.textContent = photoFile.files[0].name;
+            } else {
+                photoNameDisplay.textContent = '';
+            }
+        });
+
+        const inputFile = document.getElementById('id_audio');
+        const fileNameDisplay = document.getElementById('audio_label');
+
+        inputFile.addEventListener('change', function () {
             if (inputFile.files.length > 0) {
                 fileNameDisplay.textContent = inputFile.files[0].name;
             } else {

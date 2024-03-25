@@ -21,6 +21,7 @@ def dj_detail(request, id):
 @login_required
 def dj_create(request):
     if request.method == 'POST':
+        print(request.POST)
         form = DjForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
